@@ -1,12 +1,14 @@
 import { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import MyCardItem from "./MyCardItem";
+import Error from "./MyError";
+import Loading from "./MyLoading";
 
 class MyGalleryItem extends Component {
   state = {
     movies: [],
-    movies2: [],
-    movies3: [],
+    isLoading: true,
+    isError: false,
   };
 
   componentDidMount = async () => {
@@ -15,10 +17,13 @@ class MyGalleryItem extends Component {
 
       if (response.ok) {
         let movies = await response.json();
-        this.setState({ movies: movies.Search });
+        this.setState({ movies: movies.Search, isLoading: false, isError: false });
+      } else {
+        this.setState({ isLoading: false, isError: true });
       }
     } catch (error) {
       console.log(error);
+      this.setState({ isLoading: false, isError: true });
     }
   };
 
@@ -26,6 +31,8 @@ class MyGalleryItem extends Component {
     return (
       <>
         <Container fluid className="text-white px-4 mt-3">
+          {this.state.isLoading && <Loading />}
+          {this.state.isError && <Error />}
           <h3>{this.props.title}</h3>
         </Container>
         <Container fluid className="m-0 px-4">

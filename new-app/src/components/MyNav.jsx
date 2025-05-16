@@ -18,11 +18,11 @@ const MyNav = () => (
           <Nav.Link href="#">My List</Nav.Link>
         </Nav>
 
-        <Nav className="ms-auto d-flex text-white">
-          <i className="bi bi-search fs-5 "></i>
-          <p>KIDS</p>
-          <i className="bi bi-bell"></i>
-          <i className="bi bi-person-circle"></i>
+        <Nav className="ms-auto d-flex text-white ">
+          <i className="bi bi-search fs-5 me-2 "></i>
+          <p className="mb-0 mx-2">KIDS</p>
+          <i className="bi bi-bell mx-2"></i>
+          <i className="bi bi-person-circle mx-2"></i>
         </Nav>
       </Navbar.Collapse>
     </Container>

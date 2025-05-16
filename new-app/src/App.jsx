@@ -16,6 +16,8 @@ function App() {
       <MyGalleryItem title="Trending Now" lookingFor="One Piece" />
       <MyGalleryItem title="Watch it Again" lookingFor="Avengers" />
       <MyGalleryItem title="New Releases" lookingFor="Inazuma Eleven" />
+      <MyGalleryItem title="Recommended For You" lookingFor="Batman" />
+      <MyGalleryItem title="Extra" lookingFor="Captain America" />
       <MyFooter />
     </>
   );
